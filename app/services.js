@@ -10,3 +10,10 @@ teamServices.factory('Team', ['$resource',
       query: {method:'GET', params:{teamId:'teams'}, isArray:true}
     });
   }]);
+
+teamServices.factory('Players', ['$resource',
+    function($resource){
+        return $resource('https://randomuser.me/api/?results=176&inc=name&gender=male', {}, {
+            query: {method:'GET', isArray:false}
+        });
+    }]);

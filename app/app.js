@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'view',
-  'myApp.view2',
+  'myApp.detailed',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -31,7 +31,7 @@ myApp.config(['$routeProvider',
             controller: 'teamControllers'
         }).
         when('/teams/:teamId', {
-            templateUrl: 'view2/view2.html',
+            templateUrl: 'detailed/detailedTeam.html',
             controller: 'teamDetailControllers'
         }).
         otherwise({

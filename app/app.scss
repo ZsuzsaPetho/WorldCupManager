@@ -27,7 +27,8 @@
 $blue: #a3d5d3;
 
 body {
-  background-color: red;
+  background-color: $blue;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {

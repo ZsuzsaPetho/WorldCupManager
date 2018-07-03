@@ -1,0 +1,19 @@
+<div class="container" ng-controller="teamControllers">
+  <h1><img ng-src="{{team.imgUrl}}" alt="{{team.name}}"> {{team.name}}</h1>
+
+  <p>{{team.name}}</p>
+
+  <ul class="specs">
+    <li>
+      <span>Details</span>
+      <dl>
+        <dt>Goal</dt>
+        <dd>{{team.goal}}</dd>
+        <dt>Win</dt>
+        <dd>{{team.winAtLastRound}}</dd>
+        <dt>Players</dt>
+        <dd>{{team.players}}</dd>
+      </dl>
+    </li>
+  </ul>
+</div>
