@@ -1,0 +1,13 @@
+
+<div class="col-md-10">
+    <!--Body content-->
+
+    <ul class="teams">
+        <li ng-repeat="team in teams" class="team-listing">
+            <a href="#/teams/{{team.id}}" class="thumb"><img ng-src="{{team.imgUrl}}" alt="{{team.name}}"></a>
+            <a href="#/teams/{{team.id}}">{{team.name}}</a>
+            <p>{{team.name}}</p>
+        </li>
+    </ul>
+
+</div>

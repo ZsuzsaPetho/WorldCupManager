@@ -1,0 +1,104 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+$blue: #a3d5d3;
+
+body {
+  background-color: red;
+}
+
+.container {
+  margin: 20px;
+  text-align: center;
+}
+
+.teamBtn {
+  height: 25px;
+  font-weight: bold;
+  width: 130px;
+  cursor: pointer;
+  background-color: azure;
+  border-radius: 25px;
+  text-align: center;
+  align: center;
+  padding: 3px;
+
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.row {
+  padding-bottom: 5px;
+  padding-top: 3px;
+  margin-bottom: 5px;
+  margin-top: 3px;
+//background-color: white;
+}
+
+.row div{
+  width: 130px;
+}
+
+#winnerTable {
+  background-color: goldenRod;
+  height: 500px;
+  padding: 80px;
+  border-radius: 40px;
+}
+
+#winner {
+  font-size: 200px;
+  text-align: center;
+}
+
+.teamBtn .divPlayers {
+  margin: 3px;
+//width: 110%;
+  text-align: left;
+  padding-left: 15px;
+  border-radius: 5px;
+  background-color: LightCyan;
+  z-index: 2; position:relative;
+
+}
+
+.ctrlBtn {
+  background: MediumSeaGreen;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.ctrlBtn:hover {
+  background-color: darken($blue,10%);
+}
+
+.teamBtn:hover {
+  background-color: darken(LightCyan,10%);
+}

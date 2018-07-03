@@ -1,7 +1,8 @@
 {
-  "name": "Sweded",
+  "id": "sweden",
+  "name": "Sweden",
   "players": [],
   "goal": 0,
   "winAtLastRound": false,
-  "imgUrl": ""
+  "imgUrl": "img/sweden.png"
 }

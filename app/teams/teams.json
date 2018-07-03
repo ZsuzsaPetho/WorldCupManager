@@ -1,0 +1,130 @@
+[
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/argentina.png"
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/belgium.png"
+  },
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/brazil.png"
+  },
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/colombia.png"
+  },
+  {
+    "id": "croatia",
+    "name": "Croatia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/croatia.png"
+  },
+  {
+    "id": "denmark",
+    "name": "Denmark",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/denmark.png"
+  },
+  {
+    "id": "england",
+    "name": "England",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/england.png"
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/france.png"
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/japan.png"
+  },
+  {
+    "id": "mexico",
+    "name": "Mexico",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/mexico.png"
+  },
+  {
+    "id": "portugal",
+    "name": "Portugal",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/portugal.png"
+  },
+  {
+    "id": "russia",
+    "name": "Russia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/russia.png"
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/spain.png"
+  },
+  {
+    "id": "sweden",
+    "name": "Sweden",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/sweden.png"
+  },
+  {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/switzerland.png"
+  },
+  {
+    "id": "uruguay",
+    "name": "Uruguay",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/uruguay.png"
+  }
+]

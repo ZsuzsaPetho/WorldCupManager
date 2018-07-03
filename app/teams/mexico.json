@@ -1,7 +1,8 @@
 {
+  "id": "mexico",
   "name": "Mexico",
   "players": [],
   "goal": 0,
   "winAtLastRound": false,
-  "imgUrl": ""
+  "imgUrl": "img/mexico.png"
 }
