@@ -27,11 +27,12 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#!/view1">Group Stage</a></li>
-    <li><a href="#!/view2">Knockout Stage</a></li>
-  </ul>
 
+  <div class="container">
+    <button go-click="/teams" class="btn btn-light">Teams</button>
+    <button go-click="/group" class="btn btn-light">Group Stage</button>
+    <button go-click="/knockout" class="btn btn-light">Knockout Stage</button>
+  </div>
 
   <div class="container" id="controlPanel">
     <h1><b>2018 World Cup Tournament</b></h1>
@@ -56,6 +57,8 @@
   <script src="app.js"></script>
   <script src="team/team.js"></script>
   <script src="services.js"></script>
+  <script src="knockOutStage/knockOutStage.js"></script>
+  <script src="groupStage/groupStage.js"></script>
   <script src="detailed/detailedTeam.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
