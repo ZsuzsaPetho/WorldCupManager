@@ -74,3 +74,17 @@ function setKnockOutTeams(teams) {
     localStorage.setItem('knockOutTeams', JSON.stringify(teams));
 }
 
+function updateTeamsStatus() {
+    let groups = getGroupStageTeams();
+    let teams = getTeams();
+    groups.for(function (group) {
+        group.forEach(function (team) {
+            let found = teams.find(function(element) {
+                return element.id === team.id;
+            });
+            team = found;
+        });
+    });
+    setTeams(teams);
+}
+

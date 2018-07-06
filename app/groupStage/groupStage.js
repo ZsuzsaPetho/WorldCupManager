@@ -31,27 +31,6 @@ groupStageControllers.directive('groupTable', function() {
     }
 })
 
-groupStageControllers.directive('train', function() {
-    /*return {
-        template : "<h1>{{teams[0]}}</h1>"
-    };*/
-
-    return {
-        controller:  ['$scope',
-            function($scope, magic) {
-
-            }
-        ],
-        restrict: 'E',
-        scope: {
-            list: '=',
-            title: '='
-        },
-        templateUrl: '/groupStage/trainDiv/newDiv.html',
-    }
-})
-
-
 function getWinnersFromGroups(groups) {
     let winners = [];
     winners.push(groups[0][0]);

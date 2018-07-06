@@ -4,7 +4,8 @@ var teamDetailControllers = angular.module('teamDetailControllers', []);
 
 teamDetailControllers.controller('teamDetailControllers', ['$scope', '$routeParams',
     function($scope, $routeParams) {
-    console.log($routeParams);
+        console.log($routeParams);
+        updateTeamsStatus();
         $scope.team = getTeams().find(function(element) {
             return element.id === $routeParams.teamId;
         });
