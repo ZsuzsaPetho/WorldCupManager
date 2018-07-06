@@ -1,0 +1,30 @@
+<table class="groupTabel table">
+    <tr>
+        <th>Team</th>
+        <th>M.Played</th>
+        <th>Win</th>
+        <th>Draw</th>
+        <th>Lost</th>
+        <th>G.For</th>
+        <th>G.Against</th>
+        <th>G.Diff</th>
+        <th>Points</th>
+    </tr>
+    <tr ng-repeat="team in group">
+        <td class="groupTableNameTd">
+            <b>
+                <span go-click="/teams/{{team.id}}" class="thumb"><img ng-src="{{team.imgUrl}}" alt="{{team.name}}"></span>
+                <span go-click="/teams/{{team.id}}">{{team.name}}</span>
+            </b>
+        </td>
+        <td>{{team.matchedPlayed}}</td>
+        <td>{{team.winMatches}}</td>
+        <td>{{team.drawMatches}}</td>
+        <td>{{team.lostMatches}}</td>
+        <td>{{team.goalFor}}</td>
+        <td>{{team.goalAgainst}}</td>
+        <td>{{team.goalDiff}}</td>
+        <td><b>{{team.points}}</b></td>
+    </tr>
+
+</table>

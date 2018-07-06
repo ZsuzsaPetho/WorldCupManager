@@ -6,7 +6,8 @@ var myApp = angular.module('myApp', [
     'teamDetailControllers',
     'myApp.version',
     'teamServices',
-    'knockOutControllers'
+    'knockOutControllers',
+    'groupStageControllers'
 ]);
 
 myApp.config(['$routeProvider',
@@ -14,7 +15,7 @@ myApp.config(['$routeProvider',
         $routeProvider.
         when('/teams', {
             templateUrl: 'team/team.html',
-            controller: 'teamDisplayControllers'
+            controller: 'teamControllers'
         }).
         when('/teams/:teamId', {
             templateUrl: 'detailed/detailedTeam.html',
@@ -26,7 +27,7 @@ myApp.config(['$routeProvider',
         }).
         when('/group', {
             templateUrl: 'groupStage/groupStage.html',
-            controller: ''
+            controller: 'groupControllers'
         }).
         otherwise({
             redirectTo: '/teams'
@@ -55,5 +56,21 @@ function getTeams() {
 
 function setTeams(teams) {
     localStorage.setItem('teams', JSON.stringify(teams));
+}
+
+function getGroupStageTeams() {
+    return JSON.parse(localStorage.getItem("GroupStageTeams"));
+}
+
+function setGroupStageTeams(teams) {
+    localStorage.setItem('GroupStageTeams', JSON.stringify(teams));
+}
+
+function getKnockOutTeams() {
+    return JSON.parse(localStorage.getItem("knockOutTeams"));
+}
+
+function setKnockOutTeams(teams) {
+    localStorage.setItem('knockOutTeams', JSON.stringify(teams));
 }
 

@@ -126,5 +126,133 @@
     "goal": 0,
     "winAtLastRound": false,
     "imgUrl": "img/uruguay.png"
+  },
+  {
+    "id": "saudarabia",
+    "name": "Saud Arabia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/saudarabia.png"
+  },
+  {
+    "id": "egypt",
+    "name": "Egypt",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/egypt.png"
+  },
+  {
+    "id": "iran",
+    "name": "Iran",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/iran.png"
+  },
+  {
+    "id": "morocco",
+    "name": "Morocco",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/morocco.png"
+  },
+  {
+    "id": "peru",
+    "name": "Peru",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/peru.png"
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/australia.png"
+  },
+  {
+    "id": "nigeria",
+    "name": "Nigeria",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/nigeria.png"
+  },
+  {
+    "id": "iceland",
+    "name": "Iceland",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/iceland.png"
+  },
+  {
+    "id": "serbia",
+    "name": "Serbia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/serbia.png"
+  },
+  {
+    "id": "costarica",
+    "name": "Costa Rica",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/costarica.png"
+  },
+  {
+    "id": "southkorea",
+    "name": "South Korea",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/southkorea.png"
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/germany.png"
+  },
+  {
+    "id": "tunisia",
+    "name": "Tunisia",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/tunisia.png"
+  },
+  {
+    "id": "hungary",
+    "name": "Hungary",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/hungary.png"
+  },
+  {
+    "id": "senegal",
+    "name": "Senegal",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/senegal.png"
+  },
+  {
+    "id": "poland",
+    "name": "Poland",
+    "players": [],
+    "goal": 0,
+    "winAtLastRound": false,
+    "imgUrl": "img/poland.png"
   }
 ]

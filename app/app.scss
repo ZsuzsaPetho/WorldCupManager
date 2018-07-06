@@ -78,3 +78,30 @@ body {
 .teamBtn:hover {
   background-color: darken(LightCyan,10%);
 }
+
+table {
+  text-align: center;
+}
+
+th {
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+team-table td {
+  width: 200px;
+}
+
+team-table span {
+  cursor: pointer;
+}
+
+group-table span {
+  cursor: pointer;
+}
+
+.groupTableNameTd {
+  text-align: left;
+  width: 125px;
+}

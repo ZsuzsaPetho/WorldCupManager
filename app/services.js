@@ -13,7 +13,7 @@ teamServices.factory('Team', ['$resource',
 
 teamServices.factory('Players', ['$resource',
     function($resource){
-        return $resource('https://randomuser.me/api/?results=176&inc=name&gender=male', {}, {
+        return $resource('https://randomuser.me/api/?results=352&inc=name&gender=male', {}, {
             query: {method:'GET', isArray:false}
         });
     }]);

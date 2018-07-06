@@ -4,10 +4,12 @@ var knockOutControllers = angular.module('knockOutControllers', []);
 
 knockOutControllers.controller('knockOutControllers', ['$scope',
     function($scope) {
-        $scope.teams = getTeams();
+        $scope.teams = getKnockOutTeams();
 
         var teamPool = $scope.teams;
-        var teams = shuffleArray(teamPool);
+        /*var teams = shuffleArray(teamPool);*/
+
+        var teams  = teamPool;
 
         var isRunning = false;
         var numOfAllTeams = teams.length;
@@ -139,7 +141,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
             var ind = Math.pow(2, round - 1);
             teams.forEach(function (team) {
                 let node = document.getElementById("row_" + ind + "_col_" + col);
-                node.firstChild.innerHTML = `<img src="img/${team.name.toLowerCase()}.png"> ${team.name}  ${ team.goal}`;
+                node.firstChild.innerHTML = `<img src="img/${team.name.split(' ').join('').toLowerCase()}.png"> ${team.name}  ${ team.goal}`;
 
                 var div = document.createElement("div");
                 div.setAttribute("class", "divPlayers");
@@ -176,7 +178,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
             var teamNode = document.createElement("div");
             teamNode.setAttribute("class", "teamBtn");
             teamNode.setAttribute("data-teamname", name);
-            teamNode.innerHTML = `<img src="img/${name.toLowerCase()}.png"> ${name} <i class="fa fa-futbol-o" aria-hidden="true"></i>`;
+            teamNode.innerHTML = `<img src="img/${name.split(' ').join('').toLowerCase()}.png"> ${name} <i class="fa fa-futbol-o" aria-hidden="true"></i>`;
             teamNode.style.cursor = "default";
             var div = document.createElement("div");
             div.setAttribute("class", "divPlayers");

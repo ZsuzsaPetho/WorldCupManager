@@ -1,0 +1,16 @@
+<table class="table table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Group {{letters[0]}}</th>
+        <th scope="col">Group {{letters[1]}}</th>
+        <th scope="col">Group {{letters[2]}}</th>
+        <th scope="col">Group {{letters[3]}}</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="i in numbersI">
+        <td ng-repeat="j in numbers">
+            <span go-click="/teams/{{groups[j][i].id}}" class="thumb"><img ng-src="{{groups[j][i].imgUrl}}" alt="{{groups[j][i].name}}"></span>
+            <span go-click="/teams/{{groups[j][i].id}}">{{groups[j][i].name}}</span>
+        </td>
+    </tr>
+</table>
