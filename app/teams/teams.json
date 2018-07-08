@@ -5,7 +5,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/argentina.png"
+    "imgUrl": "img/argentina.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "belgium",
@@ -13,7 +21,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/belgium.png"
+    "imgUrl": "img/belgium.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "brazil",
@@ -21,7 +37,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/brazil.png"
+    "imgUrl": "img/brazil.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "colombia",
@@ -29,7 +53,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/colombia.png"
+    "imgUrl": "img/colombia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "croatia",
@@ -37,7 +69,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/croatia.png"
+    "imgUrl": "img/croatia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "denmark",
@@ -45,7 +85,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/denmark.png"
+    "imgUrl": "img/denmark.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "england",
@@ -53,7 +101,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/england.png"
+    "imgUrl": "img/england.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "france",
@@ -61,7 +117,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/france.png"
+    "imgUrl": "img/france.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "japan",
@@ -69,7 +133,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/japan.png"
+    "imgUrl": "img/japan.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "mexico",
@@ -77,7 +149,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/mexico.png"
+    "imgUrl": "img/mexico.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "portugal",
@@ -85,7 +165,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/portugal.png"
+    "imgUrl": "img/portugal.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "russia",
@@ -93,7 +181,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/russia.png"
+    "imgUrl": "img/russia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "spain",
@@ -101,7 +197,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/spain.png"
+    "imgUrl": "img/spain.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "sweden",
@@ -109,7 +213,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/sweden.png"
+    "imgUrl": "img/sweden.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "switzerland",
@@ -117,7 +229,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/switzerland.png"
+    "imgUrl": "img/switzerland.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "uruguay",
@@ -125,7 +245,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/uruguay.png"
+    "imgUrl": "img/uruguay.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "saudarabia",
@@ -133,7 +261,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/saudarabia.png"
+    "imgUrl": "img/saudarabia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "egypt",
@@ -141,7 +277,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/egypt.png"
+    "imgUrl": "img/egypt.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "iran",
@@ -149,7 +293,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/iran.png"
+    "imgUrl": "img/iran.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "morocco",
@@ -157,7 +309,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/morocco.png"
+    "imgUrl": "img/morocco.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "peru",
@@ -165,7 +325,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/peru.png"
+    "imgUrl": "img/peru.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "australia",
@@ -173,7 +341,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/australia.png"
+    "imgUrl": "img/australia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "nigeria",
@@ -181,7 +357,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/nigeria.png"
+    "imgUrl": "img/nigeria.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "iceland",
@@ -189,7 +373,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/iceland.png"
+    "imgUrl": "img/iceland.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "serbia",
@@ -197,7 +389,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/serbia.png"
+    "imgUrl": "img/serbia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "costarica",
@@ -205,7 +405,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/costarica.png"
+    "imgUrl": "img/costarica.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "southkorea",
@@ -213,7 +421,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/southkorea.png"
+    "imgUrl": "img/southkorea.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "germany",
@@ -221,7 +437,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/germany.png"
+    "imgUrl": "img/germany.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "tunisia",
@@ -229,7 +453,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/tunisia.png"
+    "imgUrl": "img/tunisia.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "hungary",
@@ -237,7 +469,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/hungary.png"
+    "imgUrl": "img/hungary.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "senegal",
@@ -245,7 +485,15 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/senegal.png"
+    "imgUrl": "img/senegal.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   },
   {
     "id": "poland",
@@ -253,6 +501,14 @@
     "players": [],
     "goal": 0,
     "winAtLastRound": false,
-    "imgUrl": "img/poland.png"
+    "imgUrl": "img/poland.png",
+    "matchedPlayed" : 0,
+    "winMatches" : 0,
+    "drawMatches" : 0,
+    "lostMatches" : 0,
+    "goalFor" : 0,
+    "goalAgainst" : 0,
+    "goalDiff" : 0,
+    "points" : 0
   }
 ]

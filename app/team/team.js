@@ -16,6 +16,7 @@ teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players',
                     $scope.groups.push([$scope.teams[i], $scope.teams[i+1], $scope.teams[i+2], $scope.teams[i+3]]);
                 }
                 console.log($scope.groups);
+                setRound(1);
                 setGroupStageTeams($scope.groups);
             });
             $scope.names = Players.query();
@@ -29,19 +30,6 @@ teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players',
         $scope.numbers = [[0,1,2,3], [4,5,6,7]];
         $scope.letters = [["A", "B", "C", "D"], ["E","F","G","H"]];
         $scope.groups = getGroupStageTeams();
-        $scope.groups.forEach(function (group) {
-            group.forEach(function(team) {
-                team.matchedPlayed = 0;
-                team.winMatches = 0;
-                team.drawMatches = 0;
-                team.lostMatches = 0;
-                team.goalFor = 0;
-                team.goalAgainst = 0;
-                team.goalDiff = 0;
-                team.points = 0;
-            });
-        });
-        setGroupStageTeams($scope.groups);
     }]);
 
 teamControllers.directive('teamTable', function() {

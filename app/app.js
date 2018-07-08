@@ -74,10 +74,18 @@ function setKnockOutTeams(teams) {
     localStorage.setItem('knockOutTeams', JSON.stringify(teams));
 }
 
+function getRound() {
+    return JSON.parse(localStorage.getItem("round"));
+}
+
+function setRound(round) {
+    localStorage.setItem('round', JSON.stringify(round));
+}
+
 function updateTeamsStatus() {
     let groups = getGroupStageTeams();
     let teams = getTeams();
-    groups.for(function (group) {
+    groups.forEach(function (group) {
         group.forEach(function (team) {
             let found = teams.find(function(element) {
                 return element.id === team.id;
