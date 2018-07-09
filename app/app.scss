@@ -37,10 +37,6 @@ body {
 //background-color: white;
 }
 
-.row div{
-  width: 130px;
-}
-
 #winnerTable {
   background-color: goldenRod;
   height: 500px;
@@ -68,7 +64,7 @@ body {
   background: MediumSeaGreen;
   border-radius: 5px;
   font-weight: bold;
-  //font-size: 20px;
+  margin-left: 5px;
 }
 
 .ctrlBtn:hover {
@@ -77,6 +73,10 @@ body {
 
 .teamBtn:hover {
   background-color: darken(LightCyan,10%);
+}
+
+.detailedHtmlBtn{
+  margin-left: 100px;
 }
 
 table {
@@ -108,4 +108,8 @@ group-table span {
 
 .gameRow {
   height: 30px;
+}
+
+.gameRow div{
+  width: 130px;
 }

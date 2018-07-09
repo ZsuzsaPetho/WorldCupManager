@@ -38,6 +38,7 @@ groupStageControllers.controller('groupControllers', ['$scope',
                     team.goalAgainst = 0;
                     team.goalDiff = 0;
                     team.points = 0;
+                    team.matches = [];
                 });
                 group.matches = [];
             });

@@ -11,18 +11,18 @@ teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players',
                 $scope.teams = result;
                 $scope.teams = shuffleArray($scope.teams);
                 setTeams($scope.teams);
-                $scope.groups = [];
-                for(let i = 0; i < $scope.teams.length; i=i+4){
-                    $scope.groups.push({"group" :[$scope.teams[i], $scope.teams[i+1], $scope.teams[i+2], $scope.teams[i+3]], "matches": []});
-                }
-                setRound(1);
-                setGroupStageTeams($scope.groups);
-            });
-            $scope.names = Players.query();
-            $scope.names.$promise.then(function (result) {
-                $scope.names = result.results;
-                addPlayersToTeams($scope.teams, $scope.names);
-                setTeams($scope.teams);
+                $scope.names = Players.query();
+                $scope.names.$promise.then(function (result) {
+                    $scope.names = result.results;
+                    addPlayersToTeams($scope.teams, $scope.names);
+                    setTeams($scope.teams);
+                    $scope.groups = [];
+                    for(let i = 0; i < $scope.teams.length; i=i+4){
+                        $scope.groups.push({"group" :[$scope.teams[i], $scope.teams[i+1], $scope.teams[i+2], $scope.teams[i+3]], "matches": []});
+                    }
+                    setRound(1);
+                    setGroupStageTeams($scope.groups);
+                });
             });
         }
         $scope.teams = getTeams();
