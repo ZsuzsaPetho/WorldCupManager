@@ -9,8 +9,8 @@
     </thead>
     <tr ng-repeat="i in numbersI">
         <td ng-repeat="j in numbers">
-            <span go-click="/teams/{{groups[j][i].id}}" class="thumb"><img ng-src="{{groups[j][i].imgUrl}}" alt="{{groups[j][i].name}}"></span>
-            <span go-click="/teams/{{groups[j][i].id}}">{{groups[j][i].name}}</span>
+            <span go-click="/teams/{{groups[j].group[i].id}}" class="thumb"><img ng-src="{{groups[j].group[i].imgUrl}}" alt="{{groups[j].group[i].name}}"></span>
+            <span go-click="/teams/{{groups[j].group[i].id}}">{{groups[j].group[i].name}}</span>
         </td>
     </tr>
 </table>

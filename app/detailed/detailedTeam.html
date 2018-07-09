@@ -10,8 +10,8 @@
       <dl>
         <dt>Goal</dt>
         <dd>{{team.goal}}</dd>
-        <dt>Win</dt>
-        <dd>{{team.winAtLastRound}}</dd>
+        <dt>Matches</dt>
+        <dd ng-repeat="match in team.matches">{{match}}</dd>
         <dt>Players</dt>
         <dd ng-repeat="player in team.players">{{player}}</dd>
       </dl>

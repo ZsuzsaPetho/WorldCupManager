@@ -13,9 +13,8 @@ teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players',
                 setTeams($scope.teams);
                 $scope.groups = [];
                 for(let i = 0; i < $scope.teams.length; i=i+4){
-                    $scope.groups.push([$scope.teams[i], $scope.teams[i+1], $scope.teams[i+2], $scope.teams[i+3]]);
+                    $scope.groups.push({"group" :[$scope.teams[i], $scope.teams[i+1], $scope.teams[i+2], $scope.teams[i+3]], "matches": []});
                 }
-                console.log($scope.groups);
                 setRound(1);
                 setGroupStageTeams($scope.groups);
             });

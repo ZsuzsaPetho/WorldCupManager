@@ -213,7 +213,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         function generateTable() {
             container.innerHTML = ``;
             for (let i = 1; i < teams.length + 1; i++) {
-                container.innerHTML += `<div class="row" id="row_${i}">`;
+                container.innerHTML += `<div class="row gameRow" id="row_${i}">`;
                 var row = document.getElementById("row_" + i);
                 for (let j = 1; j < numOfCols + 1; j++) {
                     row.innerHTML += `<div class="col-sm-1" id="row_${i}_col_${j}"></div>`;

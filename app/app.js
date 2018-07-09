@@ -82,17 +82,4 @@ function setRound(round) {
     localStorage.setItem('round', JSON.stringify(round));
 }
 
-function updateTeamsStatus() {
-    let groups = getGroupStageTeams();
-    let teams = getTeams();
-    groups.forEach(function (group) {
-        group.forEach(function (team) {
-            let found = teams.find(function(element) {
-                return element.id === team.id;
-            });
-            team = found;
-        });
-    });
-    setTeams(teams);
-}
 

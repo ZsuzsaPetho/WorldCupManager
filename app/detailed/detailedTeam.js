@@ -4,13 +4,12 @@ var teamDetailControllers = angular.module('teamDetailControllers', []);
 
 teamDetailControllers.controller('teamDetailControllers', ['$scope', '$routeParams',
     function($scope, $routeParams) {
-        console.log($routeParams);
-        updateTeamsStatus();
-        $scope.team = getTeams().find(function(element) {
+        let teams =[];
+        getGroupStageTeams().map(group => group.group).map(group => group.map(team => teams.push(team)));
+        $scope.team = teams.find(function(element) {
             return element.id === $routeParams.teamId;
         });
     }]);
-
 
 teamDetailControllers.directive('historyBackward', ['$window', function($window) {
     return {

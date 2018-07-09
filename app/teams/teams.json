@@ -13,7 +13,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "belgium",
@@ -29,7 +30,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "brazil",
@@ -45,7 +47,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "colombia",
@@ -61,7 +64,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "croatia",
@@ -77,7 +81,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "denmark",
@@ -93,7 +98,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "england",
@@ -109,7 +115,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "france",
@@ -125,7 +132,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "japan",
@@ -141,7 +149,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "mexico",
@@ -157,7 +166,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "portugal",
@@ -173,7 +183,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "russia",
@@ -189,7 +200,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "spain",
@@ -205,7 +217,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "sweden",
@@ -221,7 +234,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "switzerland",
@@ -237,7 +251,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "uruguay",
@@ -253,7 +268,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "saudarabia",
@@ -269,7 +285,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "egypt",
@@ -285,7 +302,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "iran",
@@ -301,7 +319,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "morocco",
@@ -317,7 +336,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "peru",
@@ -333,7 +353,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "australia",
@@ -349,7 +370,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "nigeria",
@@ -365,7 +387,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "iceland",
@@ -381,7 +404,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "serbia",
@@ -397,7 +421,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "costarica",
@@ -413,7 +438,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "southkorea",
@@ -429,7 +455,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "germany",
@@ -445,7 +472,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "tunisia",
@@ -461,7 +489,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "hungary",
@@ -477,7 +506,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "senegal",
@@ -493,7 +523,8 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   },
   {
     "id": "poland",
@@ -509,6 +540,7 @@
     "goalFor" : 0,
     "goalAgainst" : 0,
     "goalDiff" : 0,
-    "points" : 0
+    "points" : 0,
+    "matches" : []
   }
 ]

@@ -5,22 +5,31 @@ var groupStageControllers = angular.module('groupStageControllers', []);
 groupStageControllers.controller('groupControllers', ['$scope',
     function($scope) {
         $scope.groups = getGroupStageTeams();
+        $scope.ctrlBtn = document.getElementById("controlBtn");
+        $scope.roundToStart = getRound();
         $scope.round = function() {
             let round = getRound();
             console.log(round);
             if (round < 4) {
                 $scope.groups.forEach(function (group) {
                     playRound(group, round);
-                    sortByPoints(group);
+                    sortByPoints(group.group);
                 });
-                setRound(++round);
+                if(round < 3 ){
+                    setRound(++round);
+                    $scope.roundToStart = round;
+                } else {
+                    $scope.ctrlBtn.disabled = true;
+                }
                 setGroupStageTeams($scope.groups);
             }
         };
         $scope.reset = function () {
             setRound(1);
+            $scope.ctrlBtn.disabled = false;
+            $scope.roundToStart = 1;
             $scope.groups.forEach(function (group) {
-                group.forEach(function(team) {
+                group.group.forEach(function(team) {
                     team.matchedPlayed = 0;
                     team.winMatches = 0;
                     team.drawMatches = 0;
@@ -30,14 +39,10 @@ groupStageControllers.controller('groupControllers', ['$scope',
                     team.goalDiff = 0;
                     team.points = 0;
                 });
+                group.matches = [];
             });
             setGroupStageTeams($scope.groups);
-        }
-
-
-
-       //------------------------ WorkAround
-
+        };
         setKnockOutTeams(getWinnersFromGroups($scope.groups));
     }]);
 
@@ -45,46 +50,52 @@ groupStageControllers.directive('groupTable', function() {
     return {
         controller:  ['$scope',
             function($scope) {
-
             }
         ],
         restrict: 'E',
         scope: {
-            group: '=',
-            //title: '='*/
+            group: '='
         },
         templateUrl: '/groupStage/components/groupTable.html',
     }
-})
+});
 
 function getWinnersFromGroups(groups) {
     let winners = [];
-    winners.push(groups[0][0]);
-    winners.push(groups[1][1]);
-    winners.push(groups[2][0]);
-    winners.push(groups[3][1]);
-    winners.push(groups[4][0]);
-    winners.push(groups[5][1]);
-    winners.push(groups[6][0]);
-    winners.push(groups[7][1]);
-    winners.push(groups[1][0]);
-    winners.push(groups[0][1]);
-    winners.push(groups[3][0]);
-    winners.push(groups[2][1]);
-    winners.push(groups[5][0]);
-    winners.push(groups[4][1]);
-    winners.push(groups[7][0]);
-    winners.push(groups[6][1]);
+    winners.push(groups[0].group[0]);
+    winners.push(groups[1].group[1]);
+    winners.push(groups[2].group[0]);
+    winners.push(groups[3].group[1]);
+    winners.push(groups[4].group[0]);
+    winners.push(groups[5].group[1]);
+    winners.push(groups[6].group[0]);
+    winners.push(groups[7].group[1]);
+    winners.push(groups[1].group[0]);
+    winners.push(groups[0].group[1]);
+    winners.push(groups[3].group[0]);
+    winners.push(groups[2].group[1]);
+    winners.push(groups[5].group[0]);
+    winners.push(groups[4].group[1]);
+    winners.push(groups[7].group[0]);
+    winners.push(groups[6].group[1]);
     return winners;
 }
 
 function sortByPoints(group) {
     group.sort(function(a, b) {
-        return b.points - a.points;
+        let byPointsDiff = b.points - a.points;
+        if (byPointsDiff === 0) {
+            let byGoalSDiff = b.goalDiff - a.goalDiff;
+            if(byGoalSDiff === 0){
+                return b.goalFor - a.goalFor;
+            }
+            return byGoalSDiff;
+        }
+        return byPointsDiff;
     });
 }
 
-function playRound(group, round ) {
+function playRound(groupObj, round ) {
     let schedule;
     switch (round) {
         case 1: schedule = [0, 2, 1, 3];
@@ -94,16 +105,19 @@ function playRound(group, round ) {
         case 3: schedule = [0, 3, 1, 2];
                 break;
     }
-    game(group[schedule[0]], group[schedule[1]]);
-    game(group[schedule[2]], group[schedule[3]]);
+    groupObj.matches = [];
+    game(groupObj.group[schedule[0]], groupObj.group[schedule[1]], groupObj);
+    game(groupObj.group[schedule[2]], groupObj.group[schedule[3]], groupObj);
 }
 
-function game(teamA, teamB) {
-    let match = { "teams" : teamA.name + " : " + teamB.name };
+function game(teamA, teamB, groupObj) {
+    let match = { "teams" : teamA.name + " Vs " + teamB.name };
     let goalA = getRandomInt(6);
     let goalB = getRandomInt(6);
     match.result = goalA + " : " + goalB;
-    console.log(match.teams + " " + match.result);
+    groupObj.matches.push(match.teams + " " + match.result);
+    teamA.matches.push(match.teams + " " + match.result);
+    teamB.matches.push(match.teams + " " + match.result);
     teamA.matchedPlayed += 1;
     teamB.matchedPlayed += 1;
     teamA.goalFor += goalA;
@@ -127,17 +141,6 @@ function game(teamA, teamB) {
         teamA.lostMatches += 1;
     }
 }
-
-/*
-team.matchedPlayed = 0;
-team.winMatches = 0;
-team.drawMatches = 0;
-team.lostMatches = 0;
-team.goalFor = 0;
-team.goalAgainst = 0;
-team.goalDiff = 0;
-team.points = 0;
-                */
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));

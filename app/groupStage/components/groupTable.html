@@ -10,7 +10,7 @@
         <th>G.Diff</th>
         <th>Points</th>
     </tr>
-    <tr ng-repeat="team in group">
+    <tr ng-repeat="team in group.group">
         <td class="groupTableNameTd">
             <b>
                 <span go-click="/teams/{{team.id}}" class="thumb"><img ng-src="{{team.imgUrl}}" alt="{{team.name}}"></span>
@@ -26,5 +26,12 @@
         <td>{{team.goalDiff}}</td>
         <td><b>{{team.points}}</b></td>
     </tr>
+
+    <p>
+        <span>{{group.matches[0]}}</span>
+        <span>||</span>
+        <span>{{group.matches[1]}}</span>
+    </p>
+
 
 </table>
