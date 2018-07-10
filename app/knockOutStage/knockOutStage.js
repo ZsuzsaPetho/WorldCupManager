@@ -2,12 +2,48 @@
 
 var knockOutControllers = angular.module('knockOutControllers', []);
 
+
+knockOutControllers.directive('knockOutTable', function() {
+    return {
+        controller:  ['$scope',
+            function($scope) {
+                $scope.getNumber = function(num) {
+                    return (Array.from(Array(num).keys())).map(x => ++x);
+                }
+                $scope.numOfAllTeams = $scope.teams.length;
+                $scope.numOfCols = 2 * Math.log2($scope.numOfAllTeams) + 1;
+                console.log(document.getElementById("winnerTable"));
+            }
+        ],
+        restrict: 'E',
+        scope: {
+            teams: '='
+        },
+        templateUrl: '/knockOutStage/components/knockOutTable.html',
+    }
+});
+
+knockOutControllers.directive('knockOutTeamBtn', function() {
+    return {
+        controller:  ['$scope',
+            function($scope) {
+                $scope.nameSimplified = $scope.name.split(' ').join('').toLowerCase();
+            }
+        ],
+        restrict: 'E',
+        scope: {
+            name: '='
+        },
+        templateUrl: '/knockOutStage/components/teamBtn.html',
+    }
+});
+
 knockOutControllers.controller('knockOutControllers', ['$scope',
     function($scope) {
-        $scope.teams = getKnockOutTeams();
+        $scope.teams = Array.from(getKnockOutTeams(), x => x);
 
         var teamPool = $scope.teams;
-        /*var teams = shuffleArray(teamPool);*/
+
 
         var teams  = teamPool;
 
@@ -28,11 +64,11 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         controlBtn.onclick = pressControlBtn;
         resetBtn.onclick = reset;
 
-        game();
+        //game();
 
 
         function game() {
-            generateTable();
+            //generateTable();
             displayRound(teams, 1);
             changeDisabledStatusOfTeamButtons(false);
         }
@@ -67,7 +103,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         function reset() {
             clearInterval(intervalID);
             round = 1;
-            teams = shuffleArray(teamPool);
+            teams = teamPool;
             remainingTeams = teams;
             isRunning = false;
             generateTable();
@@ -223,16 +259,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
             ;
         }
 
-        function shuffleArray(array) {
-            let copyOfArray = array.map(x => x);
-            for (var i = copyOfArray.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = copyOfArray[i];
-                copyOfArray[i] = copyOfArray[j];
-                copyOfArray[j] = temp;
-            }
-            return copyOfArray;
-        }
+
 
         /*function displayWinner(winnerName) {
             document.getElementById("winner").innerHTML = winnerName;
