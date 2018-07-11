@@ -5,11 +5,11 @@ var groupStageControllers = angular.module('groupStageControllers', []);
 groupStageControllers.controller('groupControllers', ['$scope',
     function($scope) {
         $scope.groups = getGroupStageTeams();
-        $scope.ctrlBtn = document.getElementById("controlBtn");
+        $scope.ctrlBtnDisabled = false;
         $scope.roundToStart = getRound();
         $scope.round = function() {
             let round = getRound();
-            console.log(round);
+
             if (round < 4) {
                 $scope.groups.forEach(function (group) {
                     playRound(group, round);
@@ -19,14 +19,14 @@ groupStageControllers.controller('groupControllers', ['$scope',
                     setRound(++round);
                     $scope.roundToStart = round;
                 } else {
-                    $scope.ctrlBtn.disabled = true;
+                    $scope.ctrlBtnDisabled = true;
                 }
                 setGroupStageTeams($scope.groups);
             }
         };
         $scope.reset = function () {
             setRound(1);
-            $scope.ctrlBtn.disabled = false;
+            $scope.ctrlBtnDisabled = false;
             $scope.roundToStart = 1;
             $scope.groups.forEach(function (group) {
                 group.group.forEach(function(team) {
@@ -92,7 +92,7 @@ function playRound(groupObj, round ) {
         case 3: schedule = [0, 3, 1, 2];
                 break;
     }
-    groupObj.matches = [];
+
     game(groupObj.group[schedule[0]], groupObj.group[schedule[1]], groupObj);
     game(groupObj.group[schedule[2]], groupObj.group[schedule[3]], groupObj);
 }

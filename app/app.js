@@ -63,6 +63,8 @@ function getGroupStageTeams() {
 }
 
 function setGroupStageTeams(teams) {
+    setTeams(teams.map(group => group.group)
+                  .reduce((acc, val) => acc.concat(val), []));
     localStorage.setItem('GroupStageTeams', JSON.stringify(teams));
 }
 
@@ -82,4 +84,14 @@ function setRound(round) {
     localStorage.setItem('round', JSON.stringify(round));
 }
 
+function updateTeams(teamsToUpdate) {
+    let teams = getTeams();
+    teamsToUpdate.forEach(function (team) {
+        let index = teams.findIndex(function(element) {
+            return element.id === team.id;
+        });
+        teams[index] = team;
+    });
+    setTeams(teams);
+}
 

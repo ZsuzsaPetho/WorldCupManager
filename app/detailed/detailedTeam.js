@@ -4,10 +4,7 @@ var teamDetailControllers = angular.module('teamDetailControllers', []);
 
 teamDetailControllers.controller('teamDetailControllers', ['$scope', '$routeParams',
     function($scope, $routeParams) {
-        let teams = getGroupStageTeams().map(group => group.group)
-                                        .reduce((acc, val) => acc.concat(val), []);
-
-        $scope.team = teams.find(function(element) {
+        $scope.team = getTeams().find(function(element) {
             return element.id === $routeParams.teamId;
         });
     }]);

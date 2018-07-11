@@ -33,6 +33,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
             if (remainingLeftBranchTeams.length === 1) {
                 $scope.pairsLeft.push(generatePairs(playRound(remainingLeftBranchTeams.concat(remainingRightBranchTeams), round)));
                 clearInterval(intervalID);
+                console.log($scope.teams);
             } else {
                 remainingLeftBranchTeams = playRound(remainingLeftBranchTeams, round);
                 remainingRightBranchTeams = playRound(remainingRightBranchTeams, round);
@@ -59,8 +60,26 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 let winnerInd = teams[i].goal > teams[i + 1].goal ? i : i + 1;
                 teams[winnerInd].win = true;
                 winners.push(teams[winnerInd]);
+
+                let teamA = teams[i];
+                let teamB = teams[i + 1];
+                let match = { "teams" : teamA.name + " Vs " + teamB.name };
+                let goalA = teamA.goal;
+                let goalB = teamB.goal;
+                match.result = goalA + " : " + goalB;
+                teamA.matches.push(match.teams + " " + match.result);
+                teamB.matches.push(match.teams + " " + match.result);
+                teamA.matchedPlayed += 1;
+                teamB.matchedPlayed += 1;
+                teamA.goalFor += goalA;
+                teamB.goalFor +=  goalB;
+                teamA.goalAgainst += goalB;
+                teamB.goalAgainst += goalA;
+                teamA.goalDiff = teamA.goalFor - teamA.goalAgainst;
+                teamB.goalDiff = teamB.goalFor - teamB.goalAgainst;
             }
             console.log(winners);
+            updateTeams(teams);
             return winners;
         }
 
