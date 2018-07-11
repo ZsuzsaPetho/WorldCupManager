@@ -7,6 +7,10 @@ groupStageControllers.controller('groupControllers', ['$scope',
         $scope.groups = getGroupStageTeams();
         $scope.ctrlBtnDisabled = false;
         $scope.roundToStart = getRound();
+        if($scope.roundToStart > 3) {
+            $scope.ctrlBtnDisabled = true;
+        }
+
         $scope.round = function() {
             let round = getRound();
 
@@ -23,7 +27,9 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 }
                 setGroupStageTeams($scope.groups);
             }
+            setPairs([],[]);
         };
+
         $scope.reset = function () {
             setRound(1);
             $scope.ctrlBtnDisabled = false;
@@ -43,6 +49,7 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 group.matches = [];
             });
             setGroupStageTeams($scope.groups);
+            setPairs([],[]);
         };
         setKnockOutTeams(getWinnersFromGroups($scope.groups));
     }]);
@@ -85,16 +92,24 @@ function sortByPoints(group) {
 function playRound(groupObj, round ) {
     let schedule;
     switch (round) {
-        case 1: schedule = [0, 2, 1, 3];
+        case 1: schedule = [1, 3, 2, 4];
                 break;
-        case 2: schedule = [0, 1, 2, 3];
+        case 2: schedule = [1, 2, 3, 4];
                 break;
-        case 3: schedule = [0, 3, 1, 2];
+        case 3: schedule = [1, 4, 2, 3];
                 break;
     }
 
-    game(groupObj.group[schedule[0]], groupObj.group[schedule[1]], groupObj);
-    game(groupObj.group[schedule[2]], groupObj.group[schedule[3]], groupObj);
+    groupObj.matches = [];
+
+    game(getTeamByIndex(groupObj, schedule[0]), getTeamByIndex(groupObj, schedule[1]), groupObj);
+    game(getTeamByIndex(groupObj, schedule[2]), getTeamByIndex(groupObj, schedule[3]), groupObj);
+}
+
+function getTeamByIndex(groupObj, index) {
+    return groupObj.group.find(function (team) {
+        return team.index === index;
+    });
 }
 
 function game(teamA, teamB, groupObj) {

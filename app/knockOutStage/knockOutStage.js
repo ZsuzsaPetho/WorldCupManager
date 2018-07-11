@@ -4,36 +4,54 @@ var knockOutControllers = angular.module('knockOutControllers', []);
 
 knockOutControllers.controller('knockOutControllers', ['$scope',
     function($scope) {
-        $scope.teams = Array.from(getKnockOutTeams(), x => x);
+        $scope.isRunning = false;
 
-        $scope.numOfAllTeams = $scope.teams.length;
-        $scope.numOfCols = 2 * Math.log2($scope.numOfAllTeams) + 1;
+        $scope.teams = Array.from(getKnockOutTeams(), x => x);
+        let numOfAllTeams = $scope.teams.length;
+        let numOfCols = 2 * Math.log2(numOfAllTeams) + 1;
+        let intervalID;
+        let round = 1;
+        let remainingLeftBranchTeams;
+        let remainingRightBranchTeams;
+        /*let pairs = getPairs();
+        $scope.pairsLeft = pairs[0];
+        $scope.pairsRight = pairs[1];*/
+
         $scope.pairsLeft = [];
         $scope.pairsRight = [];
-
-        let remainingLeftBranchTeams = $scope.teams.slice(0, $scope.numOfAllTeams / 2);
-        let remainingRightBranchTeams = $scope.teams.slice($scope.numOfAllTeams / 2, $scope.numOfAllTeams);
-        console.log(remainingLeftBranchTeams);
-        console.log(remainingRightBranchTeams);
-
+        remainingLeftBranchTeams = $scope.teams.slice(0, numOfAllTeams / 2);
+        remainingRightBranchTeams = $scope.teams.slice(numOfAllTeams / 2, numOfAllTeams);
         $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
         $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
 
-        let intervalID = setInterval(gameRound, 1000);
-        let round = 1;
 
-        function generatePairs(array) {
-            return new Array(Math.ceil(array.length/2))
-                .fill(1)
-                .map((x,index) => 2 * index)
-                .map((x, index) => array.slice(x, x+2));
-        }
+        $scope.start = function () {
+
+            intervalID = setInterval(gameRound, 1000);
+            $scope.isRunning = true;
+        };
+
+        $scope.stop = function () {
+            clearInterval(intervalID);
+            $scope.isRunning = false;
+        };
+
+        $scope.reset = function () {
+            clearInterval(intervalID);
+            $scope.teams = Array.from(getKnockOutTeams(), x => x);
+            $scope.pairsLeft = [];
+            $scope.pairsRight = [];
+            remainingLeftBranchTeams = $scope.teams.slice(0, numOfAllTeams / 2);
+            remainingRightBranchTeams = $scope.teams.slice(numOfAllTeams / 2, numOfAllTeams);
+            $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
+            $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
+            round = 1;
+        };
 
         function gameRound() {
             if (remainingLeftBranchTeams.length === 1) {
                 $scope.pairsLeft.push(generatePairs(playRound(remainingLeftBranchTeams.concat(remainingRightBranchTeams), round)));
                 clearInterval(intervalID);
-                console.log($scope.teams);
             } else {
                 remainingLeftBranchTeams = playRound(remainingLeftBranchTeams, round);
                 remainingRightBranchTeams = playRound(remainingRightBranchTeams, round);
@@ -43,6 +61,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 }
             }
             round += 1;
+            setPairs($scope.pairsLeft, $scope.pairsRight);
             $scope.$apply();
         }
 
@@ -78,9 +97,14 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 teamA.goalDiff = teamA.goalFor - teamA.goalAgainst;
                 teamB.goalDiff = teamB.goalFor - teamB.goalAgainst;
             }
-            console.log(winners);
             updateTeams(teams);
             return winners;
         }
 
+        function generatePairs(array) {
+            return new Array(Math.ceil(array.length/2))
+                .fill(1)
+                .map((x,index) => 2 * index)
+                .map((x, index) => array.slice(x, x+2));
+        }
     }]);
