@@ -75,34 +75,3 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         }
 
     }]);
-
-knockOutControllers.directive('knockOutTeamBtn', function() {
-    return {
-        controller:  ['$scope',
-            function($scope) {
-                $scope.name = $scope.team.name;
-                $scope.nameSimplified = $scope.name.split(' ').join('').toLowerCase();
-                $scope.showGoal = ($scope.team.goal === 0) ? false : true;
-            }
-        ],
-        restrict: 'E',
-        scope: {
-            team: '='
-        },
-        templateUrl: '/knockOutStage/components/knockOutTeamBtn.html',
-    }
-});
-
-knockOutControllers.directive('knockOutMatch', function() {
-    return {
-        controller:  ['$scope',
-            function($scope) {
-            }
-        ],
-        restrict: 'E',
-        scope: {
-            matchPair: '='
-        },
-        templateUrl: '/knockOutStage/components/knockOutMatch.html',
-    }
-});
