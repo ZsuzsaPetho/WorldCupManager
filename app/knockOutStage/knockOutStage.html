@@ -1,15 +1,32 @@
-<div class="container">
+<div class="container-fluid">
 
-    <button class="btn btn-light ctrlBtn" id="controlBtn"> <i class="fa fa-play-circle " aria-hidden="true"></i> Start </button>
-    <button class="btn btn-light ctrlBtn" id="resetBtn"><i class="fa fa-reply-all" aria-hidden="true"></i> Reset </button>
+    <button class="btn btn-light ctrlBtn" id="controlBtn">
+        <i class="fa fa-play-circle " aria-hidden="true"></i>
+        <span>Start</span>
+    </button>
 
-    <knock-out-table teams="teams"></knock-out-table>
+    <button class="btn btn-light ctrlBtn" id="resetBtn">
+        <i class="fa fa-reply-all" aria-hidden="true"></i>
+        <span>Reset</span>
+    </button>
 
-    <!--<div class="container" id="table"></div>-->
+    <div class="container-fluid">
 
-    <div class="container text-center" id="winnerTable">
-        <img src="https://www.shareicon.net/data/128x128/2016/07/08/792753_cup_512x512.png"></img>
-        <h1 id="winner"> x </h1>
+        <div class="row align-items-center">
+
+            <div class="col" ng-repeat="pairs in pairsLeft">
+                <div ng-repeat="pair in pairs" class="row">
+                    <knock-out-match match-pair="pair"  ></knock-out-match>
+                </div>
+            </div>
+
+            <div class="col" ng-repeat="index in [2,1,0]">
+                <div ng-repeat="pair in pairsRight[index]" class="row">
+                    <knock-out-match match-pair="pair"  ></knock-out-match>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </div>

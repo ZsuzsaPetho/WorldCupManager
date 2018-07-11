@@ -3,6 +3,7 @@
 $blue: #a3d5d3;
 
 body {
+  font-size: 13px;
   background-color: $blue;
   font-family: 'Poppins', sans-serif;
 }
@@ -22,6 +23,8 @@ body {
   text-align: center;
   align: center;
   padding: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   -webkit-user-select: none; /* webkit (safari, chrome) browsers */
   -moz-user-select: none; /* mozilla browsers */
@@ -30,10 +33,10 @@ body {
 }
 
 .row {
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   padding-top: 3px;
   margin-bottom: 5px;
-  margin-top: 3px;
+  margin-top: 10px;
 //background-color: white;
 }
 
@@ -106,10 +109,3 @@ group-table span {
   width: 125px;
 }
 
-.gameRow {
-  height: 30px;
-}
-
-.gameRow div{
-  width: 130px;
-}

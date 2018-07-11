@@ -1,12 +1,12 @@
 <table class="table table">
-    <thead class="thead-dark">
+
     <tr>
         <th scope="col">Group {{letters[0]}}</th>
         <th scope="col">Group {{letters[1]}}</th>
         <th scope="col">Group {{letters[2]}}</th>
         <th scope="col">Group {{letters[3]}}</th>
     </tr>
-    </thead>
+
     <tr ng-repeat="i in numbersI">
         <td ng-repeat="j in numbers">
             <span go-click="/teams/{{groups[j].group[i].id}}" class="thumb"><img ng-src="{{groups[j].group[i].imgUrl}}" alt="{{groups[j].group[i].name}}"></span>
