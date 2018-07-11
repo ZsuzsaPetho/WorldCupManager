@@ -11,8 +11,6 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         $scope.pairsLeft = [];
         $scope.pairsRight = [];
 
-        $scope.winner=[];
-
         let remainingLeftBranchTeams = $scope.teams.slice(0, $scope.numOfAllTeams / 2);
         let remainingRightBranchTeams = $scope.teams.slice($scope.numOfAllTeams / 2, $scope.numOfAllTeams);
         console.log(remainingLeftBranchTeams);
@@ -20,13 +18,9 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
 
         $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
         $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
-        console.log($scope.pairsLeft);
-        console.log($scope.pairsRight);
-
 
         let intervalID = setInterval(gameRound, 1000);
         let round = 1;
-
 
         function generatePairs(array) {
             return new Array(Math.ceil(array.length/2))
@@ -37,9 +31,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
 
         function gameRound() {
             if (remainingLeftBranchTeams.length === 1) {
-                let win = playRound(remainingLeftBranchTeams.concat(remainingRightBranchTeams), round);
-                console.log(win);
-                $scope.pairsLeft.push(generatePairs(win));
+                $scope.pairsLeft.push(generatePairs(playRound(remainingLeftBranchTeams.concat(remainingRightBranchTeams), round)));
                 clearInterval(intervalID);
             } else {
                 remainingLeftBranchTeams = playRound(remainingLeftBranchTeams, round);
@@ -48,8 +40,6 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                     $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
                     $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
                 }
-                console.log($scope.pairsLeft);
-                console.log($scope.pairsRight);
             }
             round += 1;
             $scope.$apply();

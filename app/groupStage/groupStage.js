@@ -47,20 +47,6 @@ groupStageControllers.controller('groupControllers', ['$scope',
         setKnockOutTeams(getWinnersFromGroups($scope.groups));
     }]);
 
-groupStageControllers.directive('groupTable', function() {
-    return {
-        controller:  ['$scope',
-            function($scope) {
-            }
-        ],
-        restrict: 'E',
-        scope: {
-            group: '='
-        },
-        templateUrl: '/groupStage/components/groupTable.html',
-    }
-});
-
 function getWinnersFromGroups(groups) {
     let winners = [];
     winners.push(groups[0].group[0]);

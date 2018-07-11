@@ -1,0 +1,93 @@
+/* app css stylesheet */
+body {
+  font-size: 13px;
+  background-color: #a3d5d3;
+  font-family: 'Poppins', sans-serif; }
+
+.container {
+  margin: 20px;
+  text-align: center; }
+
+.teamBtn {
+  height: 25px;
+  font-weight: bold;
+  width: 130px;
+  cursor: pointer;
+  background-color: azure;
+  border-radius: 25px;
+  text-align: center;
+  align: center;
+  padding: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-user-select: none;
+  /* webkit (safari, chrome) browsers */
+  -moz-user-select: none;
+  /* mozilla browsers */
+  -khtml-user-select: none;
+  /* webkit (konqueror) browsers */
+  -ms-user-select: none;
+  /* IE10+ */ }
+
+.row {
+  padding-bottom: 10px;
+  padding-top: 3px;
+  margin-bottom: 5px;
+  margin-top: 10px; }
+
+#winnerTable {
+  background-color: goldenRod;
+  height: 500px;
+  padding: 80px;
+  border-radius: 40px; }
+
+#winner {
+  font-size: 200px;
+  text-align: center; }
+
+.teamBtn .divPlayers {
+  margin: 3px;
+  text-align: left;
+  padding-left: 15px;
+  border-radius: 5px;
+  background-color: LightCyan;
+  z-index: 5;
+  position: relative; }
+
+.ctrlBtn {
+  background: MediumSeaGreen;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 5px; }
+
+.ctrlBtn:hover {
+  background-color: #80c5c2; }
+
+.teamBtn:hover {
+  background-color: #adffff; }
+
+.detailedHtmlBtn {
+  margin-left: 100px; }
+
+table {
+  text-align: center; }
+
+th {
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px; }
+
+team-table td {
+  width: 200px; }
+
+team-table span {
+  cursor: pointer; }
+
+group-table span {
+  cursor: pointer; }
+
+.groupTableNameTd {
+  text-align: left;
+  width: 125px; }
+
+/*# sourceMappingURL=app.css.map */
