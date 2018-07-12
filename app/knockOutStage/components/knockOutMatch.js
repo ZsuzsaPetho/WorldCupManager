@@ -8,7 +8,8 @@ knockOutControllers.directive('knockOutMatch', function() {
         ],
         restrict: 'E',
         scope: {
-            matchPair: '='
+            matchPair: '=',
+            showGoal: '='
         },
         templateUrl: '/knockOutStage/components/knockOutMatch.html',
     }

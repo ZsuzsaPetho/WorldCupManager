@@ -5,6 +5,7 @@ var knockOutControllers = angular.module('knockOutControllers', []);
 knockOutControllers.controller('knockOutControllers', ['$scope',
     function($scope) {
         $scope.isRunning = false;
+        $scope.ended = false;
 
         $scope.teams = Array.from(getKnockOutTeams(), x => x);
         let numOfAllTeams = $scope.teams.length;
@@ -16,18 +17,18 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         /*let pairs = getPairs();
         $scope.pairsLeft = pairs[0];
         $scope.pairsRight = pairs[1];*/
-
+        console.log(angular.toJson(obj));
         $scope.pairsLeft = [];
         $scope.pairsRight = [];
         remainingLeftBranchTeams = $scope.teams.slice(0, numOfAllTeams / 2);
         remainingRightBranchTeams = $scope.teams.slice(numOfAllTeams / 2, numOfAllTeams);
         $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
         $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
-
+        $scope.showGoal = false;
 
         $scope.start = function () {
 
-            intervalID = setInterval(gameRound, 1000);
+            intervalID = setInterval(gameRound, 1500);
             $scope.isRunning = true;
         };
 
@@ -46,19 +47,25 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
             $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
             $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
             round = 1;
+            $scope.isRunning = false;
+            $scope.ended = false;
+            $scope.showGoal = false;
         };
 
         function gameRound() {
             if (remainingLeftBranchTeams.length === 1) {
                 $scope.pairsLeft.push(generatePairs(playRound(remainingLeftBranchTeams.concat(remainingRightBranchTeams), round)));
                 clearInterval(intervalID);
+                $scope.isRunning = false;
+                $scope.ended = true;
             } else {
+                $scope.showGoal = true;
                 remainingLeftBranchTeams = playRound(remainingLeftBranchTeams, round);
                 remainingRightBranchTeams = playRound(remainingRightBranchTeams, round);
-                if(remainingLeftBranchTeams.length !== 1 ) {
+                setTimeout(function(){if(remainingLeftBranchTeams.length !== 1 ) {
                     $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
                     $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
-                }
+                }},100);
             }
             round += 1;
             setPairs($scope.pairsLeft, $scope.pairsRight);
@@ -78,7 +85,6 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 }
                 let winnerInd = teams[i].goal > teams[i + 1].goal ? i : i + 1;
                 teams[winnerInd].win = true;
-                winners.push(teams[winnerInd]);
 
                 let teamA = teams[i];
                 let teamB = teams[i + 1];
@@ -96,6 +102,9 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 teamB.goalAgainst += goalA;
                 teamA.goalDiff = teamA.goalFor - teamA.goalAgainst;
                 teamB.goalDiff = teamB.goalFor - teamB.goalAgainst;
+
+                let winner = Object.assign({}, teams[winnerInd]);
+                winners.push(winner);
             }
             updateTeams(teams);
             return winners;

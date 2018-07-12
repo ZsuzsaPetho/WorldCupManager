@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-    <button ng-if="!isRunning" class="btn btn-light ctrlBtn" ng-click="start()">
+    <button ng-if="!isRunning" class="btn btn-light ctrlBtn" ng-click="start()" ng-disabled="ended">
         <i class="fa fa-play-circle " aria-hidden="true"></i>
         <span>Start</span>
     </button>
@@ -21,13 +21,13 @@
 
             <div class="col" ng-repeat="pairs in pairsLeft">
                 <div ng-repeat="pair in pairs" class="row">
-                    <knock-out-match match-pair="pair"  ></knock-out-match>
+                    <knock-out-match match-pair="pair" show-goal="showGoal"></knock-out-match>
                 </div>
             </div>
 
             <div class="col" ng-repeat="index in [2,1,0]">
                 <div ng-repeat="pair in pairsRight[index]" class="row">
-                    <knock-out-match match-pair="pair"  ></knock-out-match>
+                    <knock-out-match match-pair="pair" show-goal="showGoal"></knock-out-match>
                 </div>
             </div>
 

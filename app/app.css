@@ -45,14 +45,8 @@ body {
   font-size: 200px;
   text-align: center; }
 
-.teamBtn .divPlayers {
-  margin: 3px;
-  text-align: left;
-  padding-left: 15px;
-  border-radius: 5px;
-  background-color: LightCyan;
-  z-index: 5;
-  position: relative; }
+.win {
+  background-color: lightgreen; }
 
 .ctrlBtn {
   background: MediumSeaGreen;

@@ -28,6 +28,7 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 setGroupStageTeams($scope.groups);
             }
             setPairs([],[]);
+            setKnockOutTeams(getWinnersFromGroups($scope.groups));
         };
 
         $scope.reset = function () {
