@@ -1,7 +1,7 @@
 'use strict';
 
 var myApp = angular.module('myApp', [
-    'ngRoute',
+    'ui.router',
     'teamMControllers',
     'teamDetailControllers',
     'myApp.version',
@@ -10,28 +10,32 @@ var myApp = angular.module('myApp', [
     'groupStageControllers'
 ]);
 
-myApp.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-        when('/teams', {
+myApp.config(['$stateProvider', '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+        .state('teams', {
+            url: '/teams',
             templateUrl: 'team/team.html',
             controller: 'teamControllers'
-        }).
-        when('/teams/:teamId', {
+        })
+        .state('teamDetailed', {
+            url: '/teams/:teamId',
             templateUrl: 'detailed/detailedTeam.html',
             controller: 'teamDetailControllers'
-        }).
-        when('/knockout', {
+        })
+        .state('knockOut', {
+            url: '/knockout',
             templateUrl: 'knockOutStage/knockOutStage.html',
             controller: 'knockOutControllers'
-        }).
-        when('/group', {
+        })
+        .state('group', {
+            url: '/group',
             templateUrl: 'groupStage/groupStage.html',
             controller: 'groupControllers'
-        }).
-        otherwise({
-            redirectTo: '/teams'
         });
+
+        $urlRouterProvider.otherwise('/teams');
+
     }]);
 
 myApp.directive( 'goClick', function ( $location ) {

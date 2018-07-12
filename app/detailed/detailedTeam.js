@@ -2,10 +2,10 @@
 
 var teamDetailControllers = angular.module('teamDetailControllers', []);
 
-teamDetailControllers.controller('teamDetailControllers', ['$scope', '$routeParams',
-    function($scope, $routeParams) {
+teamDetailControllers.controller('teamDetailControllers', ['$scope', '$stateParams',
+    function($scope, $stateParams) {
         $scope.team = getTeams().find(function(element) {
-            return element.id === $routeParams.teamId;
+            return element.id === $stateParams.teamId;
         });
     }]);
 

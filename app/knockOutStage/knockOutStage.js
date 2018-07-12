@@ -14,10 +14,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         let round = 1;
         let remainingLeftBranchTeams;
         let remainingRightBranchTeams;
-        /*let pairs = getPairs();
-        $scope.pairsLeft = pairs[0];
-        $scope.pairsRight = pairs[1];*/
-        console.log(angular.toJson(obj));
+
         $scope.pairsLeft = [];
         $scope.pairsRight = [];
         remainingLeftBranchTeams = $scope.teams.slice(0, numOfAllTeams / 2);
@@ -68,7 +65,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 }},100);
             }
             round += 1;
-            setPairs($scope.pairsLeft, $scope.pairsRight);
+
             $scope.$apply();
         }
 
