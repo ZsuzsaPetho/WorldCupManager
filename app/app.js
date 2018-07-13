@@ -88,14 +88,6 @@ function setRound(round) {
     localStorage.setItem('round', JSON.stringify(round));
 }
 
-function getPairs() {
-    return JSON.parse(localStorage.getItem("pairs"));
-}
-
-function setPairs(leftPairs, rightPairs) {
-    localStorage.setItem('pairs', JSON.stringify([leftPairs, rightPairs]));
-}
-
 function updateTeams(teamsToUpdate) {
     let teams = getTeams();
     teamsToUpdate.forEach(function (team) {
