@@ -7,7 +7,7 @@ groupStageControllers.controller('groupControllers', ['$scope',
         $scope.groups = getGroupStageTeams();
         $scope.ctrlBtnDisabled = false;
         $scope.roundToStart = getRound();
-        if($scope.roundToStart > 3) {
+        if($scope.roundToStart > 2) {
             $scope.ctrlBtnDisabled = true;
         }
 
@@ -27,8 +27,8 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 }
                 setGroupStageTeams($scope.groups);
             }
-            setPairs([],[]);
             setKnockOutTeams(getWinnersFromGroups($scope.groups));
+            resetKnockOutStage();
         };
 
         $scope.reset = function () {
@@ -50,7 +50,7 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 group.matches = [];
             });
             setGroupStageTeams($scope.groups);
-            setPairs([],[]);
+            resetKnockOutStage();
         };
         setKnockOutTeams(getWinnersFromGroups($scope.groups));
     }]);

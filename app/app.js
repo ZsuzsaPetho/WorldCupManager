@@ -84,12 +84,31 @@ function setRound(round) {
     localStorage.setItem('round', JSON.stringify(round));
 }
 
-function getPairs() {
-    return JSON.parse(localStorage.getItem("pairs"));
+function getKnockOutRound() {
+    return JSON.parse(localStorage.getItem("knockOutRound"));
 }
 
-function setPairs(leftPairs, rightPairs) {
-    localStorage.setItem('pairs', JSON.stringify([leftPairs, rightPairs]));
+function setKnockOutRound(round) {
+    localStorage.setItem('knockOutRound', JSON.stringify(round));
+}
+
+function getKnockOutState() {
+    return JSON.parse(localStorage.getItem("knockOutState"));
+}
+
+function setKnockOutState(state) {
+    localStorage.setItem('knockOutState', JSON.stringify(state));
+}
+
+function resetKnockOutStage() {
+    let teams = Array.from(getKnockOutTeams(), x => x);
+    setKnockOutState({"pairsLeft" : [],
+                        "pairsRight" : [],
+                        "remainingLeftBranchTeams" : teams.slice(0, teams.length / 2),
+                        "remainingRightBranchTeams": teams.slice(teams.length / 2, teams.length),
+                        "ended": false,
+                        "round" : 1,
+                        "showGoal": false});
 }
 
 function updateTeams(teamsToUpdate) {
