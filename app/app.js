@@ -4,7 +4,6 @@ var myApp = angular.module('myApp', [
     'ui.router',
     'teamMControllers',
     'teamDetailControllers',
-    'myApp.version',
     'teamServices',
     'knockOutControllers',
     'groupStageControllers'
@@ -15,25 +14,30 @@ myApp.config(['$stateProvider', '$urlRouterProvider',
         $stateProvider
         .state('teams', {
             url: '/teams',
-            templateUrl: 'team/team.html',
+            templateUrl: "team/team.html",
             controller: 'teamControllers'
         })
         .state('teamDetailed', {
             url: '/teams/:teamId',
-            templateUrl: 'detailed/detailedTeam.html',
+            templateUrl: "detailed/detailedTeam.html",
             controller: 'teamDetailControllers'
         })
-        .state('knockOut', {
-            url: '/knockout',
-            templateUrl: 'knockOutStage/knockOutStage.html',
-            controller: 'knockOutControllers'
-        })
-        .state('group', {
-            url: '/group',
-            templateUrl: 'groupStage/groupStage.html',
-            controller: 'groupControllers'
+        .state('game', {
+            url: '/game',
+            views: {
+                '': {
+                    templateUrl: 'game/game.html'
+                },
+                'group@game': {
+                    templateUrl: 'groupStage/groupStage.html',
+                    controller: 'groupControllers'
+                },
+                'knock@game': {
+                    templateUrl: 'knockOutStage/knockOutStage.html',
+                    controller: 'knockOutControllers'
+                }
+            }
         });
-
         $urlRouterProvider.otherwise('/teams');
 
     }]);
@@ -78,6 +82,7 @@ function getKnockOutTeams() {
 
 function setKnockOutTeams(teams) {
     localStorage.setItem('knockOutTeams', JSON.stringify(teams));
+    setGroupsChanged(true);
 }
 
 function getRound() {
@@ -86,6 +91,14 @@ function getRound() {
 
 function setRound(round) {
     localStorage.setItem('round', JSON.stringify(round));
+}
+
+function hasGroupsChanged() {
+    return JSON.parse(localStorage.getItem("change"));
+}
+
+function setGroupsChanged(boolean) {
+    localStorage.setItem('change', JSON.stringify(boolean));
 }
 
 function updateTeams(teamsToUpdate) {
@@ -98,6 +111,7 @@ function updateTeams(teamsToUpdate) {
     });
     setTeams(teams);
 }
+
 
 
 

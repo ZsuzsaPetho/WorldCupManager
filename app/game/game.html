@@ -1,0 +1,25 @@
+<div align="left">
+
+    <button class="btn btn-light ctrlBtn" type="button" data-toggle="collapse" data-target="#group" aria-expanded="false" aria-controls="group">Group Stage</button>
+    <button class="btn btn-light ctrlBtn" type="button" data-toggle="collapse" data-target="#knock" aria-expanded="false" aria-controls="knock">Knock Out Stage</button>
+
+</div>
+
+
+<div class="collapseDiv">
+
+    <h5>Knock Out Stage</h5>
+    <div class="collapse multi-collapse" id="knock">
+        <div ui-view="knock"></div>
+    </div>
+
+</div>
+
+<div class="collapseDiv">
+
+    <h5>Group Stage</h5>
+    <div class="collapse multi-collapse" id="group">
+        <div ui-view="group"></div>
+    </div>
+
+</div>

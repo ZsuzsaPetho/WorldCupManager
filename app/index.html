@@ -25,13 +25,13 @@
 <body>
 
   <div class="container">
+
     <button go-click="/teams" class="btn btn-light">Teams</button>
-    <button go-click="/group" class="btn btn-light">Group Stage</button>
-    <button go-click="/knockout" class="btn btn-light">Knockout Stage</button>
+    <button go-click="/game" class="btn btn-light">Game</button>
+
   </div>
 
-
-  <div ui-view></div>
+  <ui-view></ui-view>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -43,7 +43,7 @@
   <script src="app.js"></script>
   <script src="team/team.js"></script>
   <script src="team/components/tableTeam.js"></script>
-  <script src="services.js"></script>
+  <script src="services/services.js"></script>
   <script src="knockOutStage/knockOutStage.js"></script>
   <script src="knockOutStage/components/knockOutTeamBtn.js"></script>
   <script src="knockOutStage/components/knockOutMatch.js"></script>

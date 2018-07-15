@@ -2,10 +2,13 @@
 
 var knockOutControllers = angular.module('knockOutControllers', []);
 
-knockOutControllers.controller('knockOutControllers', ['$scope',
-    function($scope) {
+knockOutControllers.controller('knockOutControllers', ['$scope', '$state', 'gameService',
+    function($scope, $state, gameService) {
+
+        console.log(gameService.getWord());
         $scope.isRunning = false;
         $scope.ended = false;
+
 
         $scope.teams = Array.from(getKnockOutTeams(), x => x);
         let numOfAllTeams = $scope.teams.length;
@@ -14,6 +17,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         let round = 1;
         let remainingLeftBranchTeams;
         let remainingRightBranchTeams;
+
 
         $scope.pairsLeft = [];
         $scope.pairsRight = [];
@@ -24,7 +28,6 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         $scope.showGoal = false;
 
         $scope.start = function () {
-
             intervalID = setInterval(gameRound, 1500);
             $scope.isRunning = true;
         };
@@ -113,4 +116,5 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                 .map((x,index) => 2 * index)
                 .map((x, index) => array.slice(x, x+2));
         }
+
     }]);

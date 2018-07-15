@@ -52,7 +52,8 @@ body {
   background: MediumSeaGreen;
   border-radius: 5px;
   font-weight: bold;
-  margin-left: 5px; }
+  margin-left: 5px;
+  margin-bottom: 10px; }
 
 .ctrlBtn:hover {
   background-color: #80c5c2; }
@@ -83,5 +84,10 @@ group-table span {
 .groupTableNameTd {
   text-align: left;
   width: 125px; }
+
+.collapseDiv {
+  background-color: #80c5c2;
+  border-radius: 30px;
+  padding-left: 40px; }
 
 /*# sourceMappingURL=app.css.map */

@@ -5,8 +5,11 @@ var groupStageControllers = angular.module('groupStageControllers', []);
 groupStageControllers.controller('groupControllers', ['$scope',
     function($scope) {
         $scope.groups = getGroupStageTeams();
+        console.log("groupStage");
+        console.log($scope.groups);
         $scope.ctrlBtnDisabled = false;
         $scope.roundToStart = getRound();
+
         if($scope.roundToStart > 3) {
             $scope.ctrlBtnDisabled = true;
         }
@@ -49,6 +52,7 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 group.matches = [];
             });
             setGroupStageTeams($scope.groups);
+            setGroupsChanged(true);
         };
         setKnockOutTeams(getWinnersFromGroups($scope.groups));
     }]);
