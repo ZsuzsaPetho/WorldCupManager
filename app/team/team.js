@@ -2,20 +2,20 @@
 
 var teamControllers = angular.module('teamMControllers', []);
 
-teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players',
-    function($scope, Team, Players) {
+teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players', 'gameService',
+    function($scope, Team, Players, gameService) {
         $scope.initTeams = function() {
             console.log("init");
             $scope.teams = Team.query();
             $scope.teams.$promise.then(function (result) {
                 $scope.teams = result;
                 $scope.teams = shuffleArray($scope.teams);
-                setTeams($scope.teams);
+                gameService.setTeams($scope.teams);
                 $scope.names = Players.query();
                 $scope.names.$promise.then(function (result) {
                     $scope.names = result.results;
                     addPlayersToTeams($scope.teams, $scope.names);
-                    setTeams($scope.teams);
+                    gameService.setTeams($scope.teams);
                     $scope.groups = [];
                     for(let i = 0; i < $scope.teams.length; i=i+4){
                         $scope.teams[i].index = 1;
@@ -24,16 +24,16 @@ teamControllers.controller('teamControllers', ['$scope', 'Team', 'Players',
                         $scope.teams[i + 3].index = 4;
                         $scope.groups.push({"group" :[$scope.teams[i], $scope.teams[i+1], $scope.teams[i+2], $scope.teams[i+3]], "matches": []});
                     }
-                    setRound(1);
-                    setGroupStageTeams($scope.groups);
+                    gameService.setRound(1);
+                    gameService.setGroupStageTeams($scope.groups);
                 });
             });
-            resetKnockOutStage();
+            gameService.resetKnockOutStage();
         }
-        $scope.teams = getTeams();
+        $scope.teams = gameService.getTeams();
         $scope.numbers = [[0,1,2,3], [4,5,6,7]];
         $scope.letters = [["A", "B", "C", "D"], ["E","F","G","H"]];
-        $scope.groups = getGroupStageTeams();
+        $scope.groups = gameService.getGroupStageTeams();
     }]);
 
 

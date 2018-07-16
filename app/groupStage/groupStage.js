@@ -2,17 +2,17 @@
 
 var groupStageControllers = angular.module('groupStageControllers', []);
 
-groupStageControllers.controller('groupControllers', ['$scope',
-    function($scope) {
-        $scope.groups = getGroupStageTeams();
+groupStageControllers.controller('groupControllers', ['$scope', 'gameService',
+    function($scope, gameService) {
+        $scope.groups = gameService.getGroupStageTeams();
         $scope.ctrlBtnDisabled = false;
-        $scope.roundToStart = getRound();
+        $scope.roundToStart = gameService.getRound();
         if($scope.roundToStart > 2) {
             $scope.ctrlBtnDisabled = true;
         }
 
         $scope.round = function() {
-            let round = getRound();
+            let round = gameService.getRound();
 
             if (round < 4) {
                 $scope.groups.forEach(function (group) {
@@ -20,19 +20,19 @@ groupStageControllers.controller('groupControllers', ['$scope',
                     sortByPoints(group.group);
                 });
                 if(round < 3 ){
-                    setRound(++round);
+                    gameService.setRound(++round);
                     $scope.roundToStart = round;
                 } else {
                     $scope.ctrlBtnDisabled = true;
                 }
-                setGroupStageTeams($scope.groups);
+                gameService.setGroupStageTeams($scope.groups);
             }
-            setKnockOutTeams(getWinnersFromGroups($scope.groups));
-            resetKnockOutStage();
+            gameService.setKnockOutTeams(getWinnersFromGroups($scope.groups));
+            gameService.resetKnockOutStage();
         };
 
         $scope.reset = function () {
-            setRound(1);
+            gameService.setRound(1);
             $scope.ctrlBtnDisabled = false;
             $scope.roundToStart = 1;
             $scope.groups.forEach(function (group) {
@@ -49,10 +49,10 @@ groupStageControllers.controller('groupControllers', ['$scope',
                 });
                 group.matches = [];
             });
-            setGroupStageTeams($scope.groups);
-            resetKnockOutStage();
+            gameService.setGroupStageTeams($scope.groups);
+            gameService.resetKnockOutStage();
         };
-        setKnockOutTeams(getWinnersFromGroups($scope.groups));
+        gameService.setKnockOutTeams(getWinnersFromGroups($scope.groups));
     }]);
 
 function getWinnersFromGroups(groups) {

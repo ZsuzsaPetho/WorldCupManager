@@ -50,69 +50,7 @@ myApp.directive( 'goClick', function ( $location ) {
     };
 });
 
-function getTeams() {
-    return JSON.parse(localStorage.getItem("teams"));
-}
 
-function setTeams(teams) {
-    localStorage.setItem('teams', JSON.stringify(teams));
-}
-
-function getGroupStageTeams() {
-    return JSON.parse(localStorage.getItem("GroupStageTeams"));
-}
-
-function setGroupStageTeams(teams) {
-    setTeams(teams.map(group => group.group)
-                  .reduce((acc, val) => acc.concat(val), []));
-    localStorage.setItem('GroupStageTeams', JSON.stringify(teams));
-}
-
-function getKnockOutTeams() {
-    return JSON.parse(localStorage.getItem("knockOutTeams"));
-}
-
-function setKnockOutTeams(teams) {
-    localStorage.setItem('knockOutTeams', JSON.stringify(teams));
-}
-
-function getRound() {
-    return JSON.parse(localStorage.getItem("round"));
-}
-
-function setRound(round) {
-    localStorage.setItem('round', JSON.stringify(round));
-}
-
-function getKnockOutState() {
-    return JSON.parse(localStorage.getItem("knockOutState"));
-}
-
-function setKnockOutState(state) {
-    localStorage.setItem('knockOutState', JSON.stringify(state));
-}
-
-function resetKnockOutStage() {
-    let teams = Array.from(getKnockOutTeams(), x => Object.assign({}, x));
-    setKnockOutState({"pairsLeft" : [],
-                        "pairsRight" : [],
-                        "remainingLeftBranchTeams" : teams.slice(0, teams.length / 2),
-                        "remainingRightBranchTeams": teams.slice(teams.length / 2, teams.length),
-                        "ended": false,
-                        "round" : 1,
-                        "showGoal": false});
-}
-
-function updateTeams(teamsToUpdate) {
-    let teams = getTeams();
-    teamsToUpdate.forEach(function (team) {
-        let index = teams.findIndex(function(element) {
-            return element.id === team.id;
-        });
-        teams[index] = team;
-    });
-    setTeams(teams);
-}
 
 
 
