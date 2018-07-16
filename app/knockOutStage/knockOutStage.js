@@ -45,6 +45,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
         $scope.reset = function () {
             clearInterval(intervalID);
             resetKnockOutStage();
+            updateTeams(getKnockOutTeams());
             let state = getKnockOutState();
             $scope.pairsLeft = state.pairsLeft;
             $scope.pairsRight = state.pairsRight;
@@ -91,7 +92,10 @@ knockOutControllers.controller('knockOutControllers', ['$scope',
                     teams[i + 1].goal = getRandomInt(6);
                 }
                 let winnerInd = teams[i].goal > teams[i + 1].goal ? i : i + 1;
+                let loserInd = winnerInd === i ? (i + 1) : i;
                 teams[winnerInd].win = true;
+                teams[winnerInd].winMatches += 1;
+                teams[loserInd].lostMatches +=1;
 
                 let teamA = teams[i];
                 let teamB = teams[i + 1];
