@@ -2,9 +2,9 @@
 
 var teamDetailControllers = angular.module('teamDetailControllers', []);
 
-teamDetailControllers.controller('teamDetailControllers', ['$scope', '$routeParams', 'gameService',
-    function($scope, $routeParams, gameService) {
-        $scope.team = gameService.getTeams().find(function(element) {
+teamDetailControllers.controller('teamDetailControllers', ['$scope', '$routeParams', 'storageService',
+    function($scope, $routeParams, storageService) {
+        $scope.team = storageService.getTeams().find(function(element) {
             return element.id === $routeParams.teamId;
         });
     }]);

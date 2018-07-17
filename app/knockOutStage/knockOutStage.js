@@ -2,13 +2,13 @@
 
 var knockOutControllers = angular.module('knockOutControllers', []);
 
-knockOutControllers.controller('knockOutControllers', ['$scope', 'gameService',
-    function($scope, gameService) {
+knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService', 'utilsService',
+    function($scope, storageService, utilsService) {
         let intervalID;
         let remainingLeftBranchTeams;
         let remainingRightBranchTeams;
         let round;
-        let state = gameService.getKnockOutState();
+        let state = storageService.getKnockOutState();
 
         initFromState(state);
 
@@ -19,7 +19,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'gameService',
         }
 
         $scope.start = function () {
-            intervalID = setInterval(gameRound, 1500);
+            intervalID = setInterval(gameRound, 1000);
             $scope.isRunning = true;
         };
 
@@ -30,10 +30,10 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'gameService',
 
         $scope.reset = function () {
             clearInterval(intervalID);
-            gameService.resetKnockOutStage();
-            gameService.updateTeams(gameService.getKnockOutTeams());
+            storageService.resetKnockOutStage();
+            storageService.updateTeams(storageService.getKnockOutTeams());
 
-            initFromState(gameService.getKnockOutState());
+            initFromState(storageService.getKnockOutState());
 
             $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
             $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
@@ -68,8 +68,8 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'gameService',
                 teams[i + 1].goal = 0;
 
                 while (teams[i].goal === teams[i + 1].goal) {
-                    teams[i].goal = getRandomInt(6);
-                    teams[i + 1].goal = getRandomInt(6);
+                    teams[i].goal = utilsService.getRandomInt(6);
+                    teams[i + 1].goal = utilsService.getRandomInt(6);
                 }
 
                 let winnerInd = teams[i].goal > teams[i + 1].goal ? i : i + 1;
@@ -100,12 +100,12 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'gameService',
                 let winner = Object.assign({}, teams[winnerInd]);
                 winners.push(winner);
             }
-            gameService.updateTeams(teams);
+            storageService.updateTeams(teams);
             return winners;
         }
 
         function setState() {
-            gameService.setKnockOutState({"pairsLeft" : $scope.pairsLeft,
+            storageService.setKnockOutState({"pairsLeft" : $scope.pairsLeft,
                 "pairsRight" : $scope.pairsRight,
                 "remainingLeftBranchTeams" : remainingLeftBranchTeams,
                 "remainingRightBranchTeams": remainingRightBranchTeams,
@@ -131,5 +131,4 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'gameService',
                 .map((x,index) => 2 * index)
                 .map((x, index) => array.slice(x, x+2));
         }
-
     }]);

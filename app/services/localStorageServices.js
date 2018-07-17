@@ -1,25 +1,9 @@
 'use strict';
 
-/* Services */
+var localStorageServices = angular.module('localStorageServices', []);
 
-var teamServices = angular.module('teamServices', ['ngResource']);
-
-teamServices.factory('Team', ['$resource',
-  function($resource){
-    return $resource('teams/:teamId.json', {}, {
-      query: {method:'GET', params:{teamId:'teams'}, isArray:true}
-    });
-  }]);
-
-teamServices.factory('Players', ['$resource',
-    function($resource){
-        return $resource('https://randomuser.me/api/?results=352&inc=name&gender=male', {}, {
-            query: {method:'GET', isArray:false}
-        });
-    }]);
-
-teamServices.service('gameService', ['Team', 'Players',
-    function (Team, Players) {
+localStorageServices.service('storageService', [
+    function () {
         this.getTeams = function () {
             return JSON.parse(localStorage.getItem("teams"));
         }
@@ -29,13 +13,13 @@ teamServices.service('gameService', ['Team', 'Players',
         }
 
         this.getGroupStageTeams = function () {
-            return JSON.parse(localStorage.getItem("GroupStageTeams"));
+            return JSON.parse(localStorage.getItem("groupStageTeams"));
         }
 
         this.setGroupStageTeams = function (teams) {
             this.setTeams(teams.map(group => group.group)
                 .reduce((acc, val) => acc.concat(val), []));
-            localStorage.setItem('GroupStageTeams', JSON.stringify(teams));
+            localStorage.setItem('groupStageTeams', JSON.stringify(teams));
         }
 
         this.getKnockOutTeams = function () {
