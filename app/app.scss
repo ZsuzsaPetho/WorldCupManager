@@ -102,3 +102,48 @@ group-table span {
   width: 125px;
 }
 
+.finalBg {
+  background-color: gold;
+  border-bottom-color: #888888;
+  border: 2px;
+  border-radius: 20px;
+}
+
+theWinner {
+  border: 5px solid transparent;
+  background: #AED6D1;
+  color: #55706D;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 15px 30px;
+  overflow: hidden;
+  width: 200px;
+  transition:
+          all        1.2s,
+          border     0.5s 1.2s,
+          box-shadow 0.3s 1.5s;
+  white-space: nowrap;
+  text-indent: 23px;
+  span {
+    display: inline-block;
+    transform: translateX(300px);
+    font-weight: bold;
+    opacity: 0;
+    transition:
+            opacity 0.1s 0.5s,
+            transform 0.4s 0.5s;
+  }
+  &.magic {
+    text-indent: 0;
+    background: #55706D;
+    font-weight: normal;
+    color: #FFE8A3;
+    width: 250px;
+    border: 10px solid #8DCCC4;
+    box-shadow: 3px 3px 2px rgba(black, 0.15);
+    span {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

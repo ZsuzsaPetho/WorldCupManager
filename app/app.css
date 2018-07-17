@@ -9,12 +9,14 @@ body {
   text-align: center; }
 
 .teamBtn {
-  height: 25px;
+  height: 31px;
   font-weight: bold;
-  width: 130px;
+  width: 136px;
   cursor: pointer;
   background-color: azure;
   border-radius: 25px;
+  border: 3px solid lightgrey;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
   text-align: center;
   align: center;
   padding: 3px;
@@ -27,13 +29,14 @@ body {
   -khtml-user-select: none;
   /* webkit (konqueror) browsers */
   -ms-user-select: none;
-  /* IE10+ */ }
+  /* IE10+ */
+}
 
 .row {
   padding-bottom: 10px;
   padding-top: 3px;
-  margin-bottom: 5px;
-  margin-top: 10px; }
+  margin: 10px 0 5px 0;
+}
 
 #winnerTable {
   background-color: goldenRod;
@@ -46,7 +49,9 @@ body {
   text-align: center; }
 
 .win {
-  background-color: lightgreen; }
+  background-color: lightgreen;
+  border-color: white;
+}
 
 .ctrlBtn {
   background: MediumSeaGreen;
@@ -84,4 +89,61 @@ group-table span {
   text-align: left;
   width: 125px; }
 
+.finalBg {
+  background-color: #55706D;
+  border: 10px solid #8DCCC4;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  text-align: center;
+  color: black;
+}
+
+.finalCont {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.best
+{
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+  background-color: #FFE8A3;
+}
+
+magic {
+  border: 5px solid transparent;
+  background: #AED6D1;
+  color: #55706D;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 15px 30px;
+  overflow: hidden;
+  width: 200px;
+  transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
+  white-space: nowrap;
+  text-indent: 23px;
+}
+magic span {
+  display: inline-block;
+  transform: translateX(300px);
+  font-weight: bold;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.1s 0.5s, transform 0.4s 0.5s;
+}
+magic.mag {
+  text-indent: 0;
+  background: #55706D;
+  font-weight: normal;
+  color: #FFE8A3;
+  width: 300px;
+  border: 10px solid #8DCCC4;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+}
+magic.mag span {
+  transform: translateX(0);
+  opacity: 1;
+}
 /*# sourceMappingURL=app.css.map */

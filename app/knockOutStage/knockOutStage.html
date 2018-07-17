@@ -15,18 +15,24 @@
         <span>Reset</span>
     </button>
 
+    <magic ng-class='{ mag: ended, finalCont: true }' winner="winner"></magic>
+
     <div class="container-fluid">
 
         <div class="row align-items-center">
 
-            <div class="col" ng-repeat="pairs in pairsLeft">
-                <div ng-repeat="pair in pairs" class="row">
+            <div class="col text-center" ng-repeat="pairs in pairsLeft">
+                <div ng-repeat="pair in pairs" class="row justify-content-center">
                     <knock-out-match match-pair="pair" show-goal="showGoal"></knock-out-match>
                 </div>
             </div>
 
+            <div class="col text-center">
+                <final-knock-out ng-if="finalists !== undefined" finalists="finalists"></final-knock-out>
+            </div>
+
             <div class="col" ng-repeat="index in [2,1,0]">
-                <div ng-repeat="pair in pairsRight[index]" class="row">
+                <div ng-repeat="pair in pairsRight[index]" class="row justify-content-center">
                     <knock-out-match match-pair="pair" show-goal="showGoal"></knock-out-match>
                 </div>
             </div>

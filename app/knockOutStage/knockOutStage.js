@@ -32,6 +32,7 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService
             clearInterval(intervalID);
             storageService.resetKnockOutStage();
             storageService.updateTeams(storageService.getKnockOutTeams());
+            $scope.finalists = undefined;
 
             initFromState(storageService.getKnockOutState());
 
@@ -42,7 +43,9 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService
         function gameRound() {
             if (remainingLeftBranchTeams.length === 1) {
                 clearInterval(intervalID);
-                $scope.pairsLeft.push(generatePairs(playRound(remainingLeftBranchTeams.concat(remainingRightBranchTeams), round)));
+                $scope.finalists = remainingLeftBranchTeams.concat(remainingRightBranchTeams);
+                $scope.winner = playRound($scope.finalists, round);
+                console.log($scope.winner);
                 $scope.isRunning = false;
                 $scope.ended = true;
             } else {

@@ -6,12 +6,14 @@ knockOutControllers.directive('knockOutTeamBtn', function() {
             function($scope) {
                 $scope.name = $scope.team.name;
                 $scope.nameSimplified = $scope.name.split(' ').join('').toLowerCase();
+
             }
         ],
         restrict: 'E',
         scope: {
             team: '=',
-            showGoal: '='
+            showGoal: '=',
+            isWinner: '@'
         },
         templateUrl: '/knockOutStage/components/knockOutTeamBtn.html',
     }
