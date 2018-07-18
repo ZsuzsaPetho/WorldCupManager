@@ -13,9 +13,8 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService
         initFromState(state);
 
         if (!$scope.ended){
-            $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
-            $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
-
+            $scope.pairsLeft.push(utilsService.generatePairs(remainingLeftBranchTeams));
+            $scope.pairsRight.push(utilsService.generatePairs(remainingRightBranchTeams));
         }
 
         $scope.start = function () {
@@ -36,8 +35,8 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService
 
             initFromState(storageService.getKnockOutState());
 
-            $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
-            $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
+            $scope.pairsLeft.push(utilsService.generatePairs(remainingLeftBranchTeams));
+            $scope.pairsRight.push(utilsService.generatePairs(remainingRightBranchTeams));
         };
 
         function gameRound() {
@@ -53,8 +52,8 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService
                 remainingLeftBranchTeams = playRound(remainingLeftBranchTeams, round);
                 remainingRightBranchTeams = playRound(remainingRightBranchTeams, round);
                 setTimeout(function(){if(remainingLeftBranchTeams.length !== 1 ) {
-                    $scope.pairsLeft.push(generatePairs(remainingLeftBranchTeams));
-                    $scope.pairsRight.push(generatePairs(remainingRightBranchTeams));
+                    $scope.pairsLeft.push(utilsService.generatePairs(remainingLeftBranchTeams));
+                    $scope.pairsRight.push(utilsService.generatePairs(remainingRightBranchTeams));
                 }},100);
             }
             round += 1;
@@ -126,12 +125,5 @@ knockOutControllers.controller('knockOutControllers', ['$scope', 'storageService
             $scope.showGoal = state.showGoal;
             $scope.ended = state.ended;
             $scope.isRunning = false;
-        }
-
-        function generatePairs(array) {
-            return new Array(Math.ceil(array.length/2))
-                .fill(1)
-                .map((x,index) => 2 * index)
-                .map((x, index) => array.slice(x, x+2));
         }
     }]);

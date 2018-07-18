@@ -48,4 +48,11 @@ utilsServices.service('utilsService', [
             }
             return copyOfArray;
         }
+
+        this.generatePairs = function (array) {
+            return new Array(Math.ceil(array.length/2))
+                .fill(1)
+                .map((x,index) => 2 * index)
+                .map((x, index) => array.slice(x, x+2));
+        }
     }]);
